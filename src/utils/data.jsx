@@ -33,4 +33,67 @@ const menus = [
   },
 ];
 
-export { menus };
+const projects = [
+  {
+    id: "1",
+    name: "Protein Shack",
+    image: [
+      "https://via.placehold.co/100",
+      "https://via.placehold.co/100",
+      "https://via.placehold.co/100",
+    ],
+    description:
+      "Lorem ipsum is a dummy text, vmkDgflmznlkvnemflMNDvjcn, .naoifeD",
+    date: "2025-03-25",
+  },
+  {
+    id: "2",
+    name: "Sadino Technology",
+    image: [
+      "https://via.placehold.co/100",
+      "https://via.placehold.co/100",
+      "https://via.placehold.co/100",
+    ],
+    description:
+      "Lorem ipsum is a dummy text, vmkDgflmznlkvnemflMNDvjcn, .naoifeD",
+    date: "2025-03-25",
+  },
+  {
+    id: "3",
+    name: "Warnaloka",
+    image: [
+      "https://via.placehold.co/100",
+      "https://via.placehold.co/100",
+      "https://via.placehold.co/100",
+    ],
+    description:
+      "Lorem ipsum is a dummy text, vmkDgflmznlkvnemflMNDvjcn, .naoifeD",
+    date: "2025-03-25",
+  },
+  {
+    id: "4",
+    name: "Hotel D'Grande",
+    image: [
+      "https://via.placehold.co/100",
+      "https://via.placehold.co/100",
+      "https://via.placehold.co/100",
+    ],
+    description:
+      "Lorem ipsum is a dummy text, vmkDgflmznlkvnemflMNDvjcn, .naoifeD",
+    date: "2025-03-25",
+  },
+  {
+    id: "5",
+    name: "Stream",
+    image: [
+      "https://via.placehold.co/100",
+      "https://via.placehold.co/100",
+      "https://via.placehold.co/100",
+    ],
+    description:
+      "Lorem ipsum is a dummy text, vmkDgflmznlkvnemflMNDvjcn, .naoifeD",
+    date: "2025-03-25",
+  },
+];
+
+export { menus, projects };
