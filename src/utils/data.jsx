@@ -38,9 +38,9 @@ const projects = [
     id: "1",
     name: "Protein Shack",
     image: [
-      "https://via.placehold.co/100",
-      "https://via.placehold.co/100",
-      "https://via.placehold.co/100",
+      "https://placehold.co/500",
+      "https://placehold.co/500",
+      "https://placehold.co/500",
     ],
     description:
       "Lorem ipsum is a dummy text, vmkDgflmznlkvnemflMNDvjcn, .naoifeD",
@@ -50,9 +50,9 @@ const projects = [
     id: "2",
     name: "Sadino Technology",
     image: [
-      "https://via.placehold.co/100",
-      "https://via.placehold.co/100",
-      "https://via.placehold.co/100",
+      "https://placehold.co/500",
+      "https://placehold.co/500",
+      "https://placehold.co/500",
     ],
     description:
       "Lorem ipsum is a dummy text, vmkDgflmznlkvnemflMNDvjcn, .naoifeD",
@@ -62,9 +62,9 @@ const projects = [
     id: "3",
     name: "Warnaloka",
     image: [
-      "https://via.placehold.co/100",
-      "https://via.placehold.co/100",
-      "https://via.placehold.co/100",
+      "https://placehold.co/500",
+      "https://placehold.co/500",
+      "https://placehold.co/500",
     ],
     description:
       "Lorem ipsum is a dummy text, vmkDgflmznlkvnemflMNDvjcn, .naoifeD",
@@ -74,9 +74,9 @@ const projects = [
     id: "4",
     name: "Hotel D'Grande",
     image: [
-      "https://via.placehold.co/100",
-      "https://via.placehold.co/100",
-      "https://via.placehold.co/100",
+      "https://placehold.co/500",
+      "https://placehold.co/500",
+      "https://placehold.co/500",
     ],
     description:
       "Lorem ipsum is a dummy text, vmkDgflmznlkvnemflMNDvjcn, .naoifeD",
@@ -86,9 +86,9 @@ const projects = [
     id: "5",
     name: "Stream",
     image: [
-      "https://via.placehold.co/100",
-      "https://via.placehold.co/100",
-      "https://via.placehold.co/100",
+      "https://placehold.co/500",
+      "https://placehold.co/500",
+      "https://placehold.co/500",
     ],
     description:
       "Lorem ipsum is a dummy text, vmkDgflmznlkvnemflMNDvjcn, .naoifeD",

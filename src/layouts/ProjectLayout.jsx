@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import { Outlet } from "react-router-dom";
 
 const ProjectLayout = () => {
-    return (
-        <div>ProjectLayout</div>
-    )
-}
+  return (
+    <div className="p-6">
+      <Outlet></Outlet>
+    </div>
+  );
+};
 
-export default ProjectLayout
+export default ProjectLayout;
