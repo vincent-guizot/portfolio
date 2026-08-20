@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+@import "./variables.css";
+
+/* ==========================================================================
+   Bridge design tokens (variables.css) into Tailwind utilities, so classes
+   like bg-brand-orange, text-brand-navy, font-display, animate-fade-in-up
+   are generated straight from the tokens above — one source of truth.
+   ========================================================================== */
+@theme {
+  --color-brand-blue: var(--color-primary-blue);
+  --color-brand-orange: var(--color-primary-orange);
+  --color-brand-navy: var(--color-dark-navy);
+  --color-brand-slate: var(--color-slate-gray);
+  --color-brand-light: var(--color-light-gray);
+  --color-brand-cream: var(--color-cream);
+
+  --font-display: var(--font-family-base);
+
+  --animate-fade-in: fade-in 0.5s var(--ease-out) both;
+  --animate-fade-in-up: fade-in-up 0.6s var(--ease-out) both;
+  --animate-scale-in: scale-in 0.35s var(--ease-out) both;
+  --animate-slide-in-right: slide-in-right 0.4s var(--ease-out) both;
+  --animate-float: float 5s ease-in-out infinite;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-page);
+  transition: background-color 0.3s var(--ease-out), color 0.3s var(--ease-out);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--color-primary-orange);
+  color: var(--color-white);
+}
+
+/* Custom scrollbar — subtle, matches the brand */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-border-strong);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-slate-gray);
+}
+
+/* Visible keyboard focus everywhere, matches brand orange */
+:focus-visible {
+  outline: 2px solid var(--color-primary-orange);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,106 @@
+/* ==========================================================================
+   VINCENT SADINO — DESIGN SYSTEM TOKENS
+   Single source of truth for color, type, spacing & elevation.
+   Update brand values here — every component reads through these variables.
+   ========================================================================== */
+
+:root {
+  /* ---- Brand palette (from Design System) ------------------------------ */
+  --color-primary-blue: #1e40af; /* Trust, Professional, Reliable */
+  --color-primary-orange: #ff6b00; /* Energy, Enthusiasm, Friendly */
+  --color-dark-navy: #0f172a; /* Strong, Confident, Professional */
+  --color-slate-gray: #64748b; /* Neutral, Balance, Secondary text */
+  --color-light-gray: #f1f5f9; /* Background surfaces */
+  --color-white: #ffffff;
+
+  /* Warm neutral used for the page canvas (matches the desktop mockups) */
+  --color-cream: #faf6f1;
+
+  /* ---- Semantic tokens (theme-aware — see [data-theme="dark"] below) --- */
+  --color-bg-page: var(--color-cream);
+  --color-bg-surface: var(--color-white);
+  --color-bg-surface-muted: var(--color-light-gray);
+  --color-bg-sidebar: var(--color-dark-navy);
+
+  --color-text-primary: var(--color-dark-navy);
+  --color-text-secondary: var(--color-slate-gray);
+  --color-text-inverse: var(--color-white);
+  --color-text-inverse-muted: rgba(255, 255, 255, 0.65);
+
+  --color-border: #e7e0d4;
+  --color-border-strong: rgba(15, 23, 42, 0.12);
+
+  --color-accent: var(--color-primary-orange);
+  --color-accent-hover: #e65f00;
+  --color-link: var(--color-primary-blue);
+
+  /* Translucent tints used behind icon marks — theme-agnostic by design */
+  --tint-blue: rgba(30, 64, 175, 0.1);
+  --tint-orange: rgba(255, 107, 0, 0.12);
+  --tint-navy: rgba(15, 23, 42, 0.08);
+  --tint-slate: rgba(100, 116, 139, 0.12);
+
+  /* ---- Typography -------------------------------------------------------
+     Poppins, per Design System type scale. */
+  --font-family-base: "Poppins", "Segoe UI", system-ui, sans-serif;
+
+  --fs-h1: 2rem; /* 32px */
+  --lh-h1: 2.5rem; /* 40px */
+  --fw-h1: 700;
+
+  --fs-h2: 1.5rem; /* 24px */
+  --lh-h2: 2rem; /* 32px */
+  --fw-h2: 600;
+
+  --fs-h3: 1.25rem; /* 20px */
+  --lh-h3: 1.75rem; /* 28px */
+  --fw-h3: 600;
+
+  --fs-body: 1rem; /* 16px */
+  --lh-body: 1.5rem; /* 24px */
+  --fw-body: 400;
+
+  --fs-small: 0.875rem; /* 14px */
+  --lh-small: 1.25rem; /* 20px */
+  --fw-small: 400;
+
+  /* ---- Layout ------------------------------------------------------------ */
+  --sidebar-width: 280px;
+  --topbar-height: 76px;
+  --content-max-width: 1180px;
+
+  /* ---- Radius ------------------------------------------------------------ */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* ---- Elevation ---------------------------------------------------------- */
+  --shadow-card: 0 2px 8px rgba(15, 23, 42, 0.04), 0 12px 28px rgba(15, 23, 42, 0.06);
+  --shadow-card-hover: 0 8px 16px rgba(15, 23, 42, 0.06), 0 20px 40px rgba(15, 23, 42, 0.1);
+  --shadow-sidebar: 4px 0 24px rgba(15, 23, 42, 0.08);
+
+  /* ---- Motion -------------------------------------------------------------- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ---- Dark theme overrides ---------------------------------------------
+   Only semantic surface/text tokens flip; brand & accent colors stay put
+   so the identity never changes, only the canvas around it. */
+[data-theme="dark"] {
+  --color-bg-page: #0b1220;
+  --color-bg-surface: #111a2c;
+  --color-bg-surface-muted: #182236;
+  --color-bg-sidebar: #0a1120;
+
+  --color-text-primary: #f1f5f9;
+  --color-text-secondary: #94a3b8;
+  --color-text-inverse: #f1f5f9;
+  --color-text-inverse-muted: rgba(241, 245, 249, 0.65);
+
+  --color-border: #1e293b;
+  --color-border-strong: rgba(241, 245, 249, 0.14);
+
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.24), 0 12px 28px rgba(0, 0, 0, 0.32);
+  --shadow-card-hover: 0 8px 16px rgba(0, 0, 0, 0.3), 0 20px 40px rgba(0, 0, 0, 0.4);
+}
