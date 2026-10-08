@@ -1,0 +1,46 @@
+/* ---------------------------------------------------------------------- *
+ * Tech logos — real brand marks shipped in /public (see the logo-*.png
+ * files). Looked up by the exact skill/tech name used elsewhere in this
+ * file; anything not listed here just falls back to a generic icon in
+ * the component that renders it.
+ * ---------------------------------------------------------------------- */
+export const techLogos = {
+  "React": "/logo-react.png",
+  "React.js": "/logo-react.png",
+  "Next.js": "/logo-nextjs.png",
+  "TypeScript": "/logo-typescript.png",
+  "JavaScript": "/logo-javascript.png",
+  "Tailwind CSS": "/logo-tailwind.png",
+  "Bootstrap": "/logo-bootstrap.png",
+  "Node.js": "/logo-nodejs.png",
+  "Express.js": "/logo-express.png",
+  "Prisma": "/logo-prisma.png",
+  "Prisma ORM": "/logo-prisma.png",
+  "Sequelize": "/logo-sequelize.png",
+  "Sequelize ORM": "/logo-sequelize.png",
+  "PostgreSQL": "/logo-postgres.png",
+  "MongoDB": "/logo-mongodb.png",
+  "MongoDB Atlas": "/logo-mongodb.png",
+  "Firebase": "/logo-firebase.png",
+  "Git": "/logo-git.png",
+  "GitHub": "/logo-github.png",
+  "GitLab": "/logo-gitlab.png",
+  "BitBucket": "/logo-bitbucket.png",
+  "Vercel": "/logo-vercel.png",
+  "Render": "/logo-render.png",
+  "Figma": "/logo-figma.png",
+  "Axios": "/logo-axios.png",
+  "Shadcn": "/logo-shadcn.png",
+  "Shadcn UI": "/logo-shadcn.png",
+  "HTML": "/logo-html5.png",
+  "HTML5": "/logo-html5.png",
+  "CSS": "/logo-css3.png",
+  "CSS3": "/logo-css3.png",
+  "SCSS/SASS": "/logo-css3.png",
+  "JSON": "/logo-json.png",
+  "Python": "/logo-python.png",
+  "Flutter": "/logo-flutter.png",
+  "Firestore": "/logo-database.png",
+  "Neon": "/logo-database.png",
+  "Supabase": "/logo-database.png",
+};

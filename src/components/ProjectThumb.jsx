@@ -1,16 +1,32 @@
 import { LayoutDashboard } from "lucide-react";
 
 /**
- * Placeholder project visual — a gradient panel with a soft "dashboard"
- * glyph. No real product screenshots ship with this template; swap this
- * for an <img> once you have real project screenshots in src/assets/.
+ * Project visual. Shows a real screenshot when one is available:
+ *   - `src` prop (e.g. a specific screenshot), otherwise
+ *   - the project's first screenshot (`project.screenshots[0].url`).
+ * Projects without screenshots (e.g. API case studies) fall back to a
+ * gradient panel built from `coverFrom` / `coverTo`.
  */
-const ProjectThumb = ({ project, className = "", tall = false, rounded = "rounded-2xl" }) => {
+const ProjectThumb = ({ project, src, alt, className = "", tall = false, rounded = "rounded-2xl" }) => {
+  const image = src ?? project.screenshots?.[0]?.url;
+  const frame = `relative overflow-hidden ${rounded} ${tall ? "aspect-[16/10]" : "aspect-[4/3]"} ${className}`;
+
+  if (image) {
+    return (
+      <div className={`${frame} border border-[var(--color-border)] bg-[var(--color-bg-surface-muted)]`}>
+        <img
+          src={image}
+          alt={alt ?? `${project.name} screenshot`}
+          loading="lazy"
+          className="h-full w-full object-cover object-top"
+        />
+      </div>
+    );
+  }
+
   return (
     <div
-      className={`relative flex items-center justify-center overflow-hidden ${rounded} ${
-        tall ? "aspect-[16/10]" : "aspect-[4/3]"
-      } ${className}`}
+      className={`${frame} flex items-center justify-center`}
       style={{
         background: `linear-gradient(135deg, ${project.coverFrom}, ${project.coverTo})`,
       }}

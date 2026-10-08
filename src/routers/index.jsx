@@ -1,83 +1,31 @@
 import { createBrowserRouter } from "react-router-dom";
-import {
-  MainLayout,
-  ProjectLayout,
-  ExperienceLayout,
-  AwardLayout,
-  ContactLayout,
-  GalleryLayout,
-} from "../layouts";
-import {
-  Home,
-  Project,
-  Work,
-  Detail,
-  Information,
-  Award,
-  Gallery,
-} from "../pages";
+import MainLayout from "../layouts/MainLayout";
+import Home from "../pages/Home";
+import AboutMe from "../pages/AboutMe";
+import Portfolio from "../pages/Portfolio";
+import PortfolioDetail from "../pages/PortfolioDetail";
+import Experience from "../pages/Experience";
+import Education from "../pages/Education";
+import Achievements from "../pages/Achievements";
+import Gallery from "../pages/Gallery";
+import Contact from "../pages/Contact";
+import NotFound from "../pages/NotFound";
 
 const router = createBrowserRouter([
   {
-    path: "",
-    element: <MainLayout></MainLayout>,
+    path: "/",
+    element: <MainLayout />,
     children: [
-      {
-        path: "",
-        element: <Home></Home>,
-      },
-      {
-        path: "portfolios",
-        element: <ProjectLayout></ProjectLayout>,
-        children: [
-          {
-            path: "projects",
-            element: <Project></Project>,
-          },
-          {
-            path: "projects/info",
-            element: <Detail></Detail>,
-          },
-        ],
-      },
-      {
-        path: "experiences",
-        element: <ExperienceLayout></ExperienceLayout>,
-        children: [
-          {
-            path: "works",
-            element: <Work></Work>,
-          },
-          {
-            path: "works/info",
-            element: <Information></Information>,
-          },
-          {
-            path: "trainings",
-            // element: <train/
-          },
-        ],
-      },
-      {
-        path: "awards",
-        element: <AwardLayout></AwardLayout>,
-        children: [
-          {
-            path: "",
-            element: <Award></Award>,
-          },
-        ],
-      },
-      {
-        path: "galleries",
-        element: <GalleryLayout></GalleryLayout>,
-        children: [
-          {
-            path: "",
-            element: <Gallery></Gallery>,
-          },
-        ],
-      },
+      { index: true, element: <Home /> },
+      { path: "about", element: <AboutMe /> },
+      { path: "portfolio", element: <Portfolio /> },
+      { path: "portfolio/:slug", element: <PortfolioDetail /> },
+      { path: "experience", element: <Experience /> },
+      { path: "education", element: <Education /> },
+      { path: "achievements", element: <Achievements /> },
+      { path: "gallery", element: <Gallery /> },
+      { path: "contact", element: <Contact /> },
+      { path: "*", element: <NotFound /> },
     ],
   },
 ]);
