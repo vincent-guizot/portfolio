@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <div className="flex flex-col gap-14">
       {/* Hero */}
-      <section className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-center">
+      <section className="flex flex-col items-start justify-between gap-10 xl:flex-row lg:items-center">
         <div className="max-w-xl animate-fade-in-up">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-brand-orange">
             Hello, I'm
@@ -22,7 +22,9 @@ const Home = () => {
           <h1 className="text-4xl font-bold leading-[1.15] text-[var(--color-text-primary)] sm:text-5xl">
             {profile.name.split(" ")[0]}
             <br />
-            <span className="text-brand-blue">{profile.name.split(" ").slice(1).join(" ")}</span>
+            <span className="text-brand-blue">
+              {profile.name.split(" ").slice(1).join(" ")}
+            </span>
             <span className="text-brand-orange">.</span>
           </h1>
           <p className="mt-4 text-base font-medium text-[var(--color-text-secondary)]">
@@ -56,7 +58,8 @@ const Home = () => {
               What I Do
             </p>
             <h2 className="text-2xl font-bold text-[var(--color-text-primary)] sm:text-[28px]">
-              Turning Ideas Into <span className="text-brand-blue">Real Solutions</span>.
+              Turning Ideas Into{" "}
+              <span className="text-brand-blue">Real Solutions</span>.
             </h2>
           </div>
           <Link
@@ -81,7 +84,8 @@ const Home = () => {
               Featured Projects
             </p>
             <h2 className="text-2xl font-bold text-[var(--color-text-primary)] sm:text-[28px]">
-              Selected Work I'm <span className="text-brand-blue">Proud Of</span>.
+              Selected Work I'm{" "}
+              <span className="text-brand-blue">Proud Of</span>.
             </h2>
           </div>
           <Link

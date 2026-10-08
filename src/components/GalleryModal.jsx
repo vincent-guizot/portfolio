@@ -1,5 +1,16 @@
 import { useEffect, useState } from "react";
-import { Camera, Heart, Image as ImageIcon, MapPin, Share2, X, ChevronLeft, ChevronRight, Download } from "lucide-react";
+import { createPortal } from "react-dom";
+import {
+  Camera,
+  Heart,
+  Image as ImageIcon,
+  MapPin,
+  Share2,
+  X,
+  ChevronLeft,
+  ChevronRight,
+  Download,
+} from "lucide-react";
 import Tag from "./Tag";
 
 const GalleryModal = ({ items, index, onClose, onNavigate }) => {
@@ -11,7 +22,8 @@ const GalleryModal = ({ items, index, onClose, onNavigate }) => {
     const handleKey = (e) => {
       if (e.key === "Escape") onClose();
       if (e.key === "ArrowRight") onNavigate((index + 1) % items.length);
-      if (e.key === "ArrowLeft") onNavigate((index - 1 + items.length) % items.length);
+      if (e.key === "ArrowLeft")
+        onNavigate((index - 1 + items.length) % items.length);
     };
     window.addEventListener("keydown", handleKey);
     document.body.style.overflow = "hidden";
@@ -25,8 +37,11 @@ const GalleryModal = ({ items, index, onClose, onNavigate }) => {
 
   if (!item) return null;
 
-  return (
-    <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/60 p-4 animate-fade-in" onClick={onClose}>
+  return createPortal(
+    <div
+      className="fixed inset-0 z-[60] flex items-center justify-center bg-black/60 p-4 animate-fade-in"
+      onClick={onClose}
+    >
       <div
         className="relative grid w-full max-w-4xl grid-cols-1 overflow-hidden rounded-2xl bg-[var(--color-bg-surface)] shadow-[var(--shadow-card-hover)] animate-scale-in lg:grid-cols-[1.3fr_1fr]"
         onClick={(e) => e.stopPropagation()}
@@ -42,12 +57,16 @@ const GalleryModal = ({ items, index, onClose, onNavigate }) => {
         {/* Image side */}
         <div
           className="relative flex min-h-[280px] items-center justify-center"
-          style={{ background: `linear-gradient(160deg, ${item.coverFrom}, ${item.coverTo})` }}
+          style={{
+            background: `linear-gradient(160deg, ${item.coverFrom}, ${item.coverTo})`,
+          }}
         >
           <ImageIcon size={64} strokeWidth={1.2} className="text-white/25" />
 
           <button
-            onClick={() => onNavigate((index - 1 + items.length) % items.length)}
+            onClick={() =>
+              onNavigate((index - 1 + items.length) % items.length)
+            }
             aria-label="Previous photo"
             className="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-[var(--color-text-primary)] transition-transform hover:scale-105"
           >
@@ -73,19 +92,27 @@ const GalleryModal = ({ items, index, onClose, onNavigate }) => {
             </span>
           </div>
 
-          <h3 className="text-xl font-bold text-[var(--color-text-primary)]">{item.title}</h3>
-          <p className="mt-1 text-sm text-[var(--color-text-secondary)]">{item.date}</p>
+          <h3 className="text-xl font-bold text-[var(--color-text-primary)]">
+            {item.title}
+          </h3>
+          <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
+            {item.date}
+          </p>
           {item.location && (
             <p className="mt-1 flex items-center gap-1.5 text-sm text-[var(--color-text-secondary)]">
               <MapPin size={13} /> {item.location}
             </p>
           )}
 
-          <p className="mt-4 text-sm leading-relaxed text-[var(--color-text-secondary)]">{item.description}</p>
+          <p className="mt-4 text-sm leading-relaxed text-[var(--color-text-secondary)]">
+            {item.description}
+          </p>
 
           <div className="mt-4 flex flex-wrap gap-1.5">
             {item.tags.map((tag) => (
-              <Tag key={tag} tone="blue">#{tag.toLowerCase()}</Tag>
+              <Tag key={tag} tone="blue">
+                #{tag.toLowerCase()}
+              </Tag>
             ))}
           </div>
 
@@ -94,11 +121,15 @@ const GalleryModal = ({ items, index, onClose, onNavigate }) => {
               <dt className="flex items-center gap-1.5 text-[var(--color-text-secondary)]">
                 <Camera size={13} /> Camera
               </dt>
-              <dd className="font-medium text-[var(--color-text-primary)]">{item.camera}</dd>
+              <dd className="font-medium text-[var(--color-text-primary)]">
+                {item.camera}
+              </dd>
             </div>
             <div className="flex items-center justify-between">
               <dt className="text-[var(--color-text-secondary)]">Shot on</dt>
-              <dd className="font-medium text-[var(--color-text-primary)]">{item.shotOn}</dd>
+              <dd className="font-medium text-[var(--color-text-primary)]">
+                {item.shotOn}
+              </dd>
             </div>
           </dl>
 
@@ -112,7 +143,9 @@ const GalleryModal = ({ items, index, onClose, onNavigate }) => {
             <button
               onClick={() => setLiked((v) => !v)}
               className={`flex flex-1 items-center justify-center gap-1.5 rounded-full px-4 py-2.5 text-sm font-semibold transition-colors ${
-                liked ? "bg-brand-orange text-white" : "bg-brand-blue text-white"
+                liked
+                  ? "bg-brand-orange text-white"
+                  : "bg-brand-blue text-white"
               }`}
             >
               <Heart size={15} fill={liked ? "currentColor" : "none"} />
@@ -121,7 +154,8 @@ const GalleryModal = ({ items, index, onClose, onNavigate }) => {
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 };
 

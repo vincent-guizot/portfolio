@@ -18,11 +18,17 @@ const StatsBar = ({ stats, columns = 4, bare = false, className = "" }) => {
     : "rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-surface)] p-6 shadow-[var(--shadow-card)]";
 
   return (
-    <div className={`grid grid-cols-2 gap-6 ${COLS[columns] || COLS[4]} ${chrome} ${className}`}>
+    <div
+      className={`grid grid-cols-2 gap-6 ${COLS[columns] || COLS[4]} ${chrome} ${className}`}
+    >
       {stats.map(({ icon: Icon, value, label }, i) => {
         const tint = tintStyles[tintRotation[i % tintRotation.length]];
         return (
-          <div key={label} className="flex animate-fade-in-up flex-col items-start gap-3" style={{ animationDelay: `${i * 70}ms` }}>
+          <div
+            key={label}
+            className="flex animate-fade-in-up flex-col items-start gap-3"
+            style={{ animationDelay: `${i * 70}ms` }}
+          >
             <div
               className="flex h-11 w-11 items-center justify-center rounded-full transition-transform duration-300 hover:scale-110"
               style={{ background: tint.background, color: tint.color }}
@@ -30,8 +36,12 @@ const StatsBar = ({ stats, columns = 4, bare = false, className = "" }) => {
               <Icon size={20} />
             </div>
             <div>
-              <p className="text-2xl font-bold leading-tight text-[var(--color-text-primary)]">{value}</p>
-              <p className="text-sm text-[var(--color-text-secondary)]">{label}</p>
+              <p className="text-2xl font-bold leading-tight text-[var(--color-text-primary)]">
+                {value}
+              </p>
+              <p className="text-sm text-[var(--color-text-secondary)]">
+                {label}
+              </p>
             </div>
           </div>
         );

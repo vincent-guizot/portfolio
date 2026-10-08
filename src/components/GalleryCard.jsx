@@ -4,7 +4,10 @@ const GalleryCard = ({ item, onClick, index = 0 }) => (
   <button
     onClick={onClick}
     className="group relative flex aspect-[4/5] animate-fade-in-up flex-col justify-end overflow-hidden rounded-2xl text-left shadow-[var(--shadow-card)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[var(--shadow-card-hover)]"
-    style={{ background: `linear-gradient(160deg, ${item.coverFrom}, ${item.coverTo})`, animationDelay: `${index * 60}ms` }}
+    style={{
+      background: `linear-gradient(160deg, ${item.coverFrom}, ${item.coverTo})`,
+      animationDelay: `${index * 60}ms`,
+    }}
   >
     <ImageIcon
       size={34}

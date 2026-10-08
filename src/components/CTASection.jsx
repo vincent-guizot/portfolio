@@ -21,7 +21,9 @@ const CTASection = ({
           <h3 className="text-[var(--fs-h2)] font-semibold leading-[var(--lh-h2)] text-[var(--color-text-primary)]">
             {title} <span className="text-brand-orange">{accent}</span>
           </h3>
-          <p className="mt-1 text-sm text-[var(--color-text-secondary)]">{subtitle}</p>
+          <p className="mt-1 text-sm text-[var(--color-text-secondary)]">
+            {subtitle}
+          </p>
         </div>
       </div>
       <div className="flex shrink-0 gap-3">

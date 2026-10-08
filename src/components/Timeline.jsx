@@ -8,7 +8,9 @@ const Timeline = ({ children }) => (
  */
 export const TimelineItem = ({ period, active, isLast, children }) => (
   <div className="grid grid-cols-[100px_28px_1fr] gap-4 sm:grid-cols-[130px_28px_1fr]">
-    <div className="pt-1 text-sm font-semibold text-[var(--color-text-secondary)]">{period}</div>
+    <div className="pt-1 text-sm font-semibold text-[var(--color-text-secondary)]">
+      {period}
+    </div>
 
     <div className="flex flex-col items-center">
       <span
@@ -18,7 +20,9 @@ export const TimelineItem = ({ period, active, isLast, children }) => (
             : "bg-brand-blue ring-[var(--tint-blue)]"
         }`}
       />
-      {!isLast && <span className="mt-1 w-px flex-1 bg-[var(--color-border)]" />}
+      {!isLast && (
+        <span className="mt-1 w-px flex-1 bg-[var(--color-border)]" />
+      )}
     </div>
 
     <div className="pb-2">{children}</div>

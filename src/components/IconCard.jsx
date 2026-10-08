@@ -5,7 +5,14 @@ import { tintStyles, tintRotation } from "../data/siteData";
  * directly; if omitted, `index` cycles through the standard rotation so
  * a mapped list gets varied but on-brand colors automatically.
  */
-const IconCard = ({ icon: Icon, title, description, tint, index = 0, className = "" }) => {
+const IconCard = ({
+  icon: Icon,
+  title,
+  description,
+  tint,
+  index = 0,
+  className = "",
+}) => {
   const resolvedTint = tint || tintRotation[index % tintRotation.length];
   const style = tintStyles[resolvedTint];
 
@@ -23,7 +30,9 @@ const IconCard = ({ icon: Icon, title, description, tint, index = 0, className =
       <h3 className="mb-1.5 text-[var(--fs-h3)] font-semibold leading-[var(--lh-h3)] text-[var(--color-text-primary)]">
         {title}
       </h3>
-      <p className="text-sm leading-relaxed text-[var(--color-text-secondary)]">{description}</p>
+      <p className="text-sm leading-relaxed text-[var(--color-text-secondary)]">
+        {description}
+      </p>
     </div>
   );
 };

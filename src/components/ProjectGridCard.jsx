@@ -16,11 +16,17 @@ const ProjectGridCard = ({ project, index = 0 }) => (
       </div>
     </div>
     <div className="flex flex-1 flex-col p-5">
-      <h3 className="font-semibold text-[var(--color-text-primary)]">{project.name}</h3>
-      <p className="mt-0.5 text-sm text-[var(--color-text-secondary)]">{project.subtitle}</p>
+      <h3 className="font-semibold text-[var(--color-text-primary)]">
+        {project.name}
+      </h3>
+      <p className="mt-0.5 text-sm text-[var(--color-text-secondary)]">
+        {project.subtitle}
+      </p>
       <div className="mt-3 flex flex-wrap gap-1.5">
         {project.techStack.slice(0, 3).map((t) => (
-          <Tag key={t.name} logo={techLogos[t.name]}>{t.name}</Tag>
+          <Tag key={t.name} logo={techLogos[t.name]}>
+            {t.name}
+          </Tag>
         ))}
       </div>
       <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-blue transition-transform duration-200 group-hover:translate-x-1">

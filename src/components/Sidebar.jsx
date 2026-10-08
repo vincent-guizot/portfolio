@@ -22,11 +22,21 @@ const Sidebar = ({ open, onClose }) => {
         }`}
       >
         {/* Logo */}
-        <NavLink to="/" onClick={onClose} className="mb-1 flex items-center gap-3">
-          <img src={logoIcon} alt="Vincent Sadino logo" className="h-11 w-11 object-contain" />
+        <NavLink
+          to="/"
+          onClick={onClose}
+          className="mb-1 flex items-center gap-3"
+        >
+          <img
+            src={logoIcon}
+            alt="Vincent Sadino logo"
+            className="h-11 w-11 object-contain"
+          />
           <div className="leading-tight">
             <p className="text-lg font-bold">
-              Vincent<br />Sadino<span className="text-brand-orange">.</span>
+              Vincent
+              <br />
+              Sadino<span className="text-brand-orange">.</span>
             </p>
           </div>
         </NavLink>

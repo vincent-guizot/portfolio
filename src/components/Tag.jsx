@@ -10,7 +10,14 @@ const Tag = ({ children, tone = "neutral", logo, className = "" }) => {
     <span
       className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium whitespace-nowrap transition-transform duration-200 hover:scale-105 ${tones[tone]} ${className}`}
     >
-      {logo && <img src={logo} alt="" className="h-3.5 w-3.5 object-contain" aria-hidden="true" />}
+      {logo && (
+        <img
+          src={logo}
+          alt=""
+          className="h-3.5 w-3.5 object-contain"
+          aria-hidden="true"
+        />
+      )}
       {children}
     </span>
   );

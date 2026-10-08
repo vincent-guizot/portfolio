@@ -6,9 +6,17 @@ import ProfilePortrait from "./ProfilePortrait";
  * and a trailing orange dot is appended automatically — matching the
  * two-tone headline signature seen across every hero in the design system.
  */
-const PageHero = ({ eyebrow, titleLines, accentWord, subtitle, portrait = true, quote, infoItems }) => {
+const PageHero = ({
+  eyebrow,
+  titleLines,
+  accentWord,
+  subtitle,
+  portrait = true,
+  quote,
+  infoItems,
+}) => {
   return (
-    <section className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-center">
+    <section className="flex flex-col items-start justify-between gap-10 xl:flex-row lg:items-center">
       <div className="max-w-xl animate-fade-in-up">
         {eyebrow && (
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-brand-orange">
@@ -21,15 +29,21 @@ const PageHero = ({ eyebrow, titleLines, accentWord, subtitle, portrait = true, 
               {line.split(accentWord ?? "\0").map((part, j, arr) => (
                 <span key={j}>
                   {part}
-                  {j < arr.length - 1 && <span className="text-brand-blue">{accentWord}</span>}
+                  {j < arr.length - 1 && (
+                    <span className="text-brand-blue">{accentWord}</span>
+                  )}
                 </span>
               ))}
-              {i === titleLines.length - 1 && <span className="text-brand-orange">.</span>}
+              {i === titleLines.length - 1 && (
+                <span className="text-brand-orange">.</span>
+              )}
             </span>
           ))}
         </h1>
         {subtitle && (
-          <p className="mt-4 text-base leading-relaxed text-[var(--color-text-secondary)]">{subtitle}</p>
+          <p className="mt-4 text-base leading-relaxed text-[var(--color-text-secondary)]">
+            {subtitle}
+          </p>
         )}
       </div>
 

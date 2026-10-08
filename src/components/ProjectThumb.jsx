@@ -7,13 +7,22 @@ import { LayoutDashboard } from "lucide-react";
  * Projects without screenshots (e.g. API case studies) fall back to a
  * gradient panel built from `coverFrom` / `coverTo`.
  */
-const ProjectThumb = ({ project, src, alt, className = "", tall = false, rounded = "rounded-2xl" }) => {
+const ProjectThumb = ({
+  project,
+  src,
+  alt,
+  className = "",
+  tall = false,
+  rounded = "rounded-2xl",
+}) => {
   const image = src ?? project.screenshots?.[0]?.url;
   const frame = `relative overflow-hidden ${rounded} ${tall ? "aspect-[16/10]" : "aspect-[4/3]"} ${className}`;
 
   if (image) {
     return (
-      <div className={`${frame} border border-[var(--color-border)] bg-[var(--color-bg-surface-muted)]`}>
+      <div
+        className={`${frame} border border-[var(--color-border)] bg-[var(--color-bg-surface-muted)]`}
+      >
         <img
           src={image}
           alt={alt ?? `${project.name} screenshot`}
@@ -35,7 +44,11 @@ const ProjectThumb = ({ project, src, alt, className = "", tall = false, rounded
         <div className="absolute -left-6 -top-6 h-28 w-28 rounded-full bg-white" />
         <div className="absolute -bottom-8 -right-4 h-32 w-32 rounded-full bg-white" />
       </div>
-      <LayoutDashboard size={40} className="relative text-white/70" strokeWidth={1.4} />
+      <LayoutDashboard
+        size={40}
+        className="relative text-white/70"
+        strokeWidth={1.4}
+      />
       <span className="absolute bottom-3 left-4 text-sm font-semibold tracking-wide text-white/90">
         {project.name}
       </span>
